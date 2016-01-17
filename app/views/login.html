@@ -1,0 +1,18 @@
+<main id="login">
+  <form ng-submit="submit()" name="loginForm" novalidate>
+    <h4>Please login</h4>
+    <span class="error" ng-if="error">{{ error }}</span>
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Email" name="email" tabindex="1" autofocus required ng-model="email">
+      <span class="error" ng-if="loginForm.email.$error.required && submitted">This field is required</span>
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" placeholder="Password" name="password" tabindex="2" required ng-model="password">
+      <span class="error" ng-if="loginForm.password.$error.required && submitted">This field is required</span>
+    </div>
+    <div class="form-group">
+      <input type="submit" class="form-control" value="Submit" tabindex="3">
+    </div>
+    Not a member? <a ng-href="#/register">become one of us!</a>
+  </form>
+</main>

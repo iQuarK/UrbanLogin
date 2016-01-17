@@ -1,0 +1,28 @@
+<main id="profile">
+
+  <span class="error" ng-if="error">{{ error }}</span>
+  <h1 class="name">
+    {{ user.name }}
+  </h1>
+  <div class="row">
+    <div class="avatar col-md-3 col-sm-3 col-xs-5">
+      <img src="http://lorempixel.com/g/150/200/cats">
+    </div>
+    <div class="col-md-8 col-sm-8 col-xs-6">
+      <div ng-if="!editProfile">
+        <div class="form-group">
+          <label>Email</label>
+          {{ user.email }}
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          {{ user.password }}
+        </div>
+        <button ng-click="toggleEdit()" class="btn btn-primary">Edit data</button>
+        <button ng-click="logOut()" class="btn btn-primary">Log Out</button>
+      </div>
+      <edit-profile data-toggle-edit="toggleEdit()" ng-if="editProfile"></edit-profile>
+    </div>
+  </div>
+
+</main>
